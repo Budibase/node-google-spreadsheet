@@ -508,7 +508,7 @@ export class GoogleSpreadsheetWorksheet {
     } else {
       const result = await this.batchGetCellsInRange([this._headerRange,
         `A${firstRow}:${this.lastColumnLetter}${lastRow}`]);
-      this._processHeaderRow(result[0]);
+      await this._processHeaderRow(result[0]);
       rawRows = result[1];
     }
 
